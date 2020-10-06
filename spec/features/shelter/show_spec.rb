@@ -15,7 +15,7 @@ RSpec.describe "As a visitor, when I visit /shelters/:id" do
     expect(page).to have_content(@shelter_1.zip)
 
     visit "/shelters/#{@shelter_2.id}"
-    
+
     expect(page).to have_content(@shelter_2.name)
     expect(page).to have_content(@shelter_2.address)
     expect(page).to have_content(@shelter_2.city)
