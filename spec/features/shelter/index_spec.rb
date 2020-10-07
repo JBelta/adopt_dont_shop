@@ -15,7 +15,7 @@ RSpec.describe "As a visitor, when I visit /shelters" do
     visit "/shelters"
     expect(page).to have_link("New Shelter")
 
-    click_link("New Shelter")
+    click_on("New Shelter")
     expect(current_path).to eq("/shelters/new")
   end
 end
