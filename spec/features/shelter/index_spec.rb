@@ -18,4 +18,18 @@ RSpec.describe "As a visitor, when I visit /shelters" do
     click_on("New Shelter")
     expect(current_path).to eq("/shelters/new")
   end
+
+  it "Redirects to /shelters and has the new shelter" do
+    visit "/shelters/new"
+
+    fill_in 'Name', with: 'Animal House'
+    fill_in 'Address', with: '789 New Drive'
+    fill_in 'City', with: 'SouthPo'
+    fill_in 'State', with: 'CT'
+    fill_in 'Zip', with: 555555
+
+    click_on 'Submit'
+    expect(current_path).to eq('/shelters')
+    expect(page).to have_content('Animal House')
+  end
 end
