@@ -7,8 +7,15 @@ RSpec.describe "As a visitor, when I visit /shelters" do
   end
   it "Has a name of each shelter in the system" do
     visit "/shelters"
-
     expect(page).to have_content(@shelter_1.name)
     expect(page).to have_content(@shelter_2.name)
+  end
+
+  it "Has a link to create a new shelter" do
+    visit "/shelters"
+    expect(page).to have_link("New Shelter")
+
+    click_link("New Shelter")
+    expect(current_path).to eq("/shelters/new")
   end
 end
