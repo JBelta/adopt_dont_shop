@@ -22,4 +22,12 @@ RSpec.describe "As a visitor, when I visit /shelters/:id" do
     expect(page).to have_content(@shelter_2.state)
     expect(page).to have_content(@shelter_2.zip)
   end
+
+  it "Has a link to update a shelters information" do
+    visit "/shelters/#{@shelter_1.id}"
+    expect(page).to have_link("Update")
+
+    click_on 'Update'
+    expect(current_path).to eq("/shelters/#{@shelter_1.id}/edit")
+  end
 end
