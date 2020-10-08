@@ -22,11 +22,11 @@ RSpec.describe "As a visitor, when I visit /shelters" do
   it "Redirects to /shelters and has the new shelter" do
     visit "/shelters/new"
 
-    fill_in 'Name', with: 'Animal House'
-    fill_in 'Address', with: '789 New Drive'
-    fill_in 'City', with: 'SouthPo'
-    fill_in 'State', with: 'CT'
-    fill_in 'Zip', with: 555555
+    fill_in :name, with: 'Animal House'
+    fill_in :address, with: '789 New Drive'
+    fill_in :city, with: 'SouthPo'
+    fill_in :state, with: 'CT'
+    fill_in :zip, with: 55555
 
     click_on 'Submit'
     expect(current_path).to eq('/shelters')
