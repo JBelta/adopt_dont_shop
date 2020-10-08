@@ -1,18 +1,18 @@
-<%= form_for :shelters do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %> <br/>
+<%= form_tag '/shelters', method: :post do %>
+  <%= label_tag 'Name' %>
+  <%= text_field_tag :name %> <br/>
 
-  <%= f.label :address %>
-  <%= f.text_field :address %> <br/>
+  <%= label_tag 'Address' %>
+  <%= text_field_tag :address %> <br/>
 
-  <%= f.label :city %>
-  <%= f.text_field :city %> <br/>
+  <%= label_tag "City" %>
+  <%= text_field_tag :city %> <br/>
 
-  <%= f.label :state %>
-  <%= f.text_field :state %> <br/>
+  <%= label_tag 'State' %>
+  <%= text_field_tag :state %> <br/>
 
-  <%= f.label :zip %>
-  <%= f.text_field :zip %> <br/>
+  <%= label_tag 'Zip' %>
+  <%= number_field_tag :zip, maxlength: 5 %> <br/>
 
-  <%= f.submit "Submit"%>
+  <%= submit_tag "Submit"%>
 <% end %>
