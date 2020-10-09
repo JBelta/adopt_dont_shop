@@ -30,4 +30,9 @@ RSpec.describe "As a visitor, when I visit /shelters/:id" do
     click_link 'Update'
     expect(current_path).to eq("/shelters/#{@shelter_1.id}/edit")
   end
+
+  it "Has a link to delete the shelter" do
+    visit "/shelters/#{@shelter_1.id}"
+    expect(page).to have_link("Delete")
+  end
 end
