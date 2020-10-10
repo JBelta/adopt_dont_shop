@@ -10,10 +10,13 @@ describe "As a visitor" do
     it "Then I see each Pet that can be adopted from that Shelter with that shelter_id including pet's image, name and aproxamit age'" do
       visit "/shelters/#{@shelter.id}/pets"
 
-      expect(page).to have_content(@pet_1.image, @pet_2.image)
-      expect(page).to have_content(@pet_1.name, @pet_2.name)
-      expect(page).to have_content(@pet_1.approximate_age, @pet_2.approximate_age)
-      
+      expect(page).to have_xpath("//img['#{@pet_1.image}']")
+      expect(page).to have_xpath("//img['#{@pet_2.image}']")
+      expect(page).to have_content(@pet_1.name)
+      expect(page).to have_content(@pet_2.name)
+      expect(page).to have_content(@pet_1.approximate_age)
+      expect(page).to have_content(@pet_2.approximate_age)
+
     end
   end
 end
