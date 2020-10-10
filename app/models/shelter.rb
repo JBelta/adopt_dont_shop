@@ -8,6 +8,7 @@ class Shelter < ApplicationRecord
   validates_presence_of :zip
 
   def self.shelters_pets
-    where(id: Pet.select(:shelter_id))
+
+    where(id: Pet.select(:shelter_id)).first.pets.to_a
   end
 end
