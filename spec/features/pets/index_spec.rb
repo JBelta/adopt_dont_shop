@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "As a visitor, when I visit /pets" do
   before :each do
     @shelter_1 = Shelter.create(name: "Puppy Palace", address: "123 Lane", city: "Wepo", state: "CT", zip: 20302)
-    @pet_1 = Pet.create(image: "", name: "Max", approximate_age: "7", sex: "F", name_of_shelter: @shelter_1.name)
+    @pet_1 = Pet.create(image: "/images/dog_01.jpg", name: "Max", approximate_age: "7", sex: "F", name_of_shelter: @shelter_1.name)
   end
   it "Has a name of each pet in the system" do
     visit "/pets"
