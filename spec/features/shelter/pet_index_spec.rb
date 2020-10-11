@@ -16,7 +16,13 @@ describe "As a visitor" do
       expect(page).to have_content(@pet_2.name)
       expect(page).to have_content(@pet_1.approximate_age)
       expect(page).to have_content(@pet_2.approximate_age)
+    end
+    it "Has a link to create a new pet" do
+      visit "/shelters/#{@shelter.id}/pets"
+      expect(page).to have_link("New Pet")
 
+      click_link "New Pet"
+      expect(current_path).to eq("/shelters/#{@shelter.id}/pets/new")
     end
   end
 end

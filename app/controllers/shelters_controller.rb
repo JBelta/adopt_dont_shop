@@ -5,6 +5,9 @@ class SheltersController < ApplicationController
   end
 
   def pet_index
+    pet = Pet.first
+    @shelter = pet.shelter
+    #lines 8 and 9 could be condenced using a Pet behavior
     @pets = Shelter.shelters_pets
   end
 
