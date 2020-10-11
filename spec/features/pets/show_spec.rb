@@ -8,11 +8,11 @@ RSpec.describe "As a visitor, when I visit /pets/:id" do
   it "Shows the shelters address, city, state and zip" do
     visit "/pets/#{@pet.id}"
 
-    expect(page).to have_xpath("//img['#{@pet.image}']")
     expect(page).to have_content(@pet.name)
+    expect(page).to have_xpath("//img['#{@pet.image}']")
     expect(page).to have_content(@pet.description)
     expect(page).to have_content(@pet.approximate_age)
-    expect(page).to have_content(@pet.adopt_status)
+    expect(@pet.adopt_status).to eq(false)
 
   end
 
