@@ -1,0 +1,12 @@
+<h1>Meet <%=@pet.name %>!</h1>
+<%= image_tag @pet.image, size: "50x50" %>
+<ul>
+<li><%= @pet.description %></li>
+  <li><%= @pet.approximate_age %></li>
+  <li><%= @pet.sex %></li>
+  <li><% if @pet.adopt_status %>
+  <p>Not Available</p>
+  <% else %>
+  <p>Available</p>
+  <% end %></li>
+</ul>
