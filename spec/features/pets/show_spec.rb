@@ -28,5 +28,4 @@ RSpec.describe "As a visitor, when I visit /pets/:id" do
 #    visit "/shelters/#{@shelter_1.id}"
 #    expect(page).to have_link("Delete")
 #  end
-#end
-#
+end
