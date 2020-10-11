@@ -1,5 +1,5 @@
 <% @pets.each do |pet| %>
-  <%= image_tag pet.image %>
+  <%= image_tag pet.image, size: "50x50" %>
   <%= pet.name %>
   <%= pet.approximate_age %>
 <% end %>
